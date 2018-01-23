@@ -1,0 +1,42 @@
+.site-nav {
+  display: none;
+  
+
+@include breakpoint(medium) {
+  display: flex;
+  float: right;
+  margin-top: 1.75rem;
+}
+
+  .nav-item {
+    margin-left: 2.5rem;
+
+    &:first-child { margin-left: 0; }
+  }
+  .nav-link {
+    padding: 0;
+    font-size: 18px;
+    color: $brand-lilac-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+
+      &:after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid $brand-green-color;
+      }
+    }
+
+    &.active {
+      color: $brand-green-color;
+
+      &:after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid $brand-green-color;
+      }
+    }
+  }
+}

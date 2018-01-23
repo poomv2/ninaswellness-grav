@@ -1,0 +1,29 @@
+.margin {
+  &--none {
+    margin: 0;
+  }
+  &__top {
+    &--small { margin-top: 1rem; }
+    &--medium { margin-top: 2rem; }
+    &--large { margin-top: 3rem; }
+    &--xlarge { margin-top: 4rem; }
+  }
+  &__right {
+    &--small { margin-right: 1rem; }
+    &--medium { margin-right: 2rem; }
+    &--large { margin-right: 3rem; }
+    &--xlarge { margin-right: 4rem; }
+  }
+  &__bottom {
+    &--small { margin-bottom: 1rem; }
+    &--medium { margin-bottom: 2rem; }
+    &--large { margin-bottom: 3rem; }
+    &--xlarge { margin-bottom: 4rem; }
+  }
+  &__left {
+    &--small { margin-left: 1rem; }
+    &--medium { margin-left: 2rem; }
+    &--large { margin-left: 3rem; }
+    &--xlarge { margin-left: 4rem; }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="blog-post-banner">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+        <a href="/blog" class="btn btn-reverse btn-block margin__top--small">Back to blog</a>
+        </div>
+        <div class="col-md-2 text-center">
+        <img src="{{ url('theme://images/blog-icon-white.svg') }}" alt="">
+        </div>
+        <div class="col-md-3">
+        <a href="/" class="btn btn-reverse btn-block margin__top--small">Homepage</a>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% set header_image = page.header.header_image|defined(true) %}
+{% set header_image_file = page.header.header_image_file %}
+
+<div class="blog-content-wrapper container margin__top--large margin__bottom--large text-center">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <time class="dt-published" datetime="{{ page.date|date("c") }}">
+                <span>{{ page.date|date("d") }}</span>
+                <em>{{ page.date|date("M") }}</em>
+            </time>
+
+            <h1>{{ page.title }}</h1>            
+
+            {% if header_image %}
+            {% if header_image_file %}
+                {% set header_image_media = page.media.images[header_image_file] %}
+            {% else %}
+                {% set header_image_media = page.media.images|first %}
+            {% endif %}
+            {{ header_image_media.html }}
+        {% endif %}
+            
+            {{ page.content }}
+        </div>
+    </div>
+</div>

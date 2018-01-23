@@ -1,0 +1,12 @@
+.site-footer {
+  padding-bottom: 3rem;
+  background-color: $brand-green-color;
+  background-image: url('../images/diagonal-pattern.png');
+  background-size: 15px;
+  color: $white-color;
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}

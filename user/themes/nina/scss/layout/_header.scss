@@ -1,0 +1,116 @@
+.main-banner {
+  padding-top: 50px;
+  background-image: url('../images/diagonal-pattern.png'), linear-gradient(45deg, $brand-lilac-color 0%, #99d9e7 100%);
+  background-size: 9px;
+  background-color: $brand-green-color;
+
+  @include breakpoint(small) {
+    min-height: 500px;
+    margin-top: 80px;
+  }
+
+  img {
+    width: 65%;
+    margin-bottom: 2rem;
+    transform: rotate(-5deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+    @include breakpoint(small) {
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+
+  .banner-heading {
+    margin-left: 20px;
+    font-family: 'Pacifico', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 30px;
+    color: $white-color;
+    text-shadow: 0 5px 20px rgba(0,19,90,0.1);
+    text-transform: none;
+    text-align: center;
+
+    @include breakpoint(small) {
+      font-size: 45px;
+      text-align: left;
+    }
+
+    @include breakpoint(medium) {
+      font-size: 60px;
+      margin-top: 20px;
+    }
+  }
+
+  h2 {
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+    width: 75%;
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    font-weight: $font-weight-light;
+    color: $white-color;
+    font-size: 20px;
+    text-align: center;
+
+    @include breakpoint(small) {
+      margin: 50px 0 0 20px;
+      font-size: 30px;
+      text-align: left;
+    }
+
+    @include breakpoint(medium) {
+      margin: 50px 0 0 20px;
+      font-size: 30px;
+      text-align: left;
+    }
+  }
+
+  p {
+    display: block;
+    width: 75%;
+    margin: .25rem auto 2rem;    
+    color: white;
+    font-size: 14px;
+    letter-spacing: .37px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include breakpoint(small) {
+      margin-left: 20px;
+      font-size: 18px;
+      width: 420px;
+      text-align: left;
+    }
+
+    @include breakpoint(medium) {
+      margin-left: 20px;
+      font-size: 18px;
+      width: 420px;
+      text-align: left;
+    }
+  }
+}
+
+.top-bar {
+
+  width: 100%;
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: 0 5px 40px rgba(0,0,0,0.1);
+
+  @include breakpoint(small) {
+    position: fixed;
+    top: 0;
+  }
+}
+
+.logo {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  margin-top: .5rem;
+  font-size: 18px;
+  color: $brand-green-color;
+}

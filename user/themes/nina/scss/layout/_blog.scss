@@ -1,0 +1,83 @@
+/////////////////////////////
+// Intro blog post panels
+/////////////////////////////
+
+.blog-home {
+  margin-bottom: 3rem;
+  overflow: auto;
+  background-color: lighten($medium-grey-color, 45%);
+  box-shadow: 0 10px 20px rgba(0,19,90,0.1);
+  transition: all 150ms;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+
+  &__image {
+    display: block;
+    height: 150px;
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+
+    @include breakpoint(medium) {
+      height: auto;
+      float: left;
+      width: 45%;
+    }
+  }
+  &__content {
+    @include breakpoint(medium) {
+      float: left;
+      width: 55%;
+    }
+
+  }
+  &__content-inner {
+    padding: .5rem 1.5rem;
+
+    @include breakpoint(small) {
+      padding: 1rem 2rem;
+    }
+  }
+  &__date {
+    background-color: $brand-lilac-color;
+    padding: .75rem 1rem;
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    color: $white-color;
+  }
+}
+
+
+
+
+/////////////////////////////
+// Blog post page
+/////////////////////////////
+
+.blog-post-banner {
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../images/diagonal-pattern.png'), linear-gradient(45deg, $brand-lilac-color 20%, #99d9e7 100%);
+  background-size: 9px;
+  opacity: 1;
+  padding: 50px 0 40px;
+
+
+
+  h1, p {
+    position: relative;
+    z-index: 3;
+    color: $white-color;
+    width: 75%;
+  }
+}
+
+.blog-content-wrapper {
+  img {
+    margin-bottom: 2.5rem;
+    box-shadow: 0 15px 20px -10px rgba(0,0,0,0.2);
+  }
+}

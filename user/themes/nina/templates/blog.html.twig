@@ -1,0 +1,45 @@
+{% extends 'partials/base.html.twig' %}
+	
+{% block content %}
+{% set collection = page.collection() %}
+{% set dateformat = admin.page.dateformat ?: config.system.pages.dateformat.short ?: "F d, Y" %}
+{{dump(page.header)}}
+<section class="margin__bottom--large" id="blog" style="margin-top: 150px;">
+	<div class="container">
+		<div class="row margin__bottom--large">
+			<div class="col-md-2">
+				<img class="margin__bottom--medium" src="{{ url('theme://images/blog-icon.svg') }}" alt="">
+			</div>
+			<div class="col-md-9">
+				<h1>My Blog</h1>
+				<p class="body-text--intro">
+					{{ page.content }}
+				</p>
+			</div>
+		</div>
+	
+		<div class="row">
+		{% for post in collection %}
+			<div class="col-md-6">
+				<div class="blog-home">
+					<div class="blog-home__image match-height" style="background-image: url('{{ page.header.header_image }}');">
+					</div>
+					<div class="blog-home__content match-height">
+						<p class="blog-home__date">{{ post.date|date(dateformat) }}</p>
+						<div class="blog-home__content-inner">
+							<a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
+							<p>{{ post.summary }}</p>
+							<a href="{{ post.url }}" class="btn btn-default">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</section>
+			
+{% endblock %}
+
+
+

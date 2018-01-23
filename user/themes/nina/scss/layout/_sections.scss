@@ -1,0 +1,81 @@
+.section-intro {
+  margin-bottom: 2rem;
+  h2 {
+    margin-bottom: .5rem;
+    font-size: 30px;
+    font-weight: $font-weight-semibold;
+    color: $brand-lilac-color;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include breakpoint(small) {
+      font-size: 42px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: $font-weight-normal;
+    color: $medium-grey-color;
+
+    @include breakpoint(small) {
+      font-size: 21px;
+    }
+  }
+}
+
+
+.testimonial {
+  background-image: url('../images/diagonal-pattern.png'), linear-gradient(45deg, $brand-lilac-color 20%, #99d9e7 100%);
+  background-size: 9px;
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 45px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @include breakpoint(small) {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @include breakpoint(small) {
+      font-size: 48px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .body-text--intro {
+    font-size: 22px;
+    font-weight: 400;
+    color: $white-color;
+
+    @include breakpoint(small) {
+      font-size: 26px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+
+    @include breakpoint(small) {
+      font-size: 22px;
+    }
+  }
+}
+
+.mailing-list {
+  margin-top: 50px;
+  padding: 50px 0;
+  background-color: $brand-lilac-color;
+  color: $white-color;
+
+  h2 { color: $white-color; }
+
+  p { font-size: 18px; }
+}

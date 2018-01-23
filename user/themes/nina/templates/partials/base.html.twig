@@ -1,0 +1,135 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css-compiled/nina.css') %}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion == 10 %}
+            {% do assets.addCss('theme://css/nucleus-ie10.css') %}
+        {% endif %}
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.addCss('theme://css/nucleus-ie9.css') %}
+            {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
+        {% endif %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js', 100) %}
+        {% do assets.addJs('theme://js/antimatter.js') %}
+        {% do assets.addJs('theme://js/slidebars.min.js') %}
+        {% do assets.addJs('theme://js/jquery.matchHeight-min.js') %}
+        {% do assets.addJs('theme://js/match-height.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head %}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+  {% block header %}
+  <div class="top-bar" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a class="logo" href="{{ base_url == '' ? '/' : base_url }}"><img src="{{ url('theme://images/logo.svg') }}" alt="Nina's Wellness Logo"></a>
+          </div>
+          <div class="col-md-9">
+            {% block header_extra %}{% endblock %}
+            {% if config.plugins.langswitcher.enabled %}
+            {% include 'partials/langswitcher.html.twig' %}
+            {% endif %}
+            {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+
+
+    <div>
+
+
+        {% block showcase %}{% endblock %}
+
+        {% block body %}
+        <!-- <section id="body" class="{{ class }}"> -->
+            {% block content %}{% endblock %}
+        <!-- </section> -->
+        {% endblock %}
+
+        {% block footer %}
+        <section class="mailing-list">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+              <img class="margin__bottom--medium" src="/images/logo-2.svg" width="200" alt="">
+              <h2>Join the mailing list</h2>
+              <p>Like what I do? Subscribe to my mailing list by entering your email below and receive news and advice on pre &amp; post natal nutrition and fitness!</p>
+              <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  <form>
+                    <div class="form-group">
+                      <input type="email" class="form-control">
+                    </div>
+                    <button class="btn btn-primary margin__top--small">Join mailing list</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+              <ul class="list-inline margin__top--large">
+                <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/facebook-icon.svg') }}" width="50" alt=""></a></li>
+                <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/instagram-link-icon.svg') }}" width="50" alt=""></a></li>
+                <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/twitter-icon.svg') }}" width="50" alt=""></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              &copy; Copyright 2017 Nina's Wellness.
+            </div>
+            <div class="col-md-6 text-right">
+              Website design by <a href="http://www.kokolas.com">Ben Kokólas Design</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+        {% endblock %}
+    </div>
+
+    {% block bottom %}
+        {{ assets.js('bottom') }}
+        <script>
+        $(function () {
+            $(document).ready(function() {
+              $.slidebars({
+                hideControlClasses: true,
+                scrollLock: true
+              });
+            });
+        });
+        </script>
+    {% endblock %}
+</body>
+</html>

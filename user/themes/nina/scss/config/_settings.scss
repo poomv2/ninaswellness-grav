@@ -1,0 +1,21 @@
+// Breakpoints
+$breakpoints: (
+        'small': 767px,
+        'medium': 992px,
+        'large': 1200px
+) !default;
+
+// Font weights
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// Site colours
+$brand-lilac-color: #A9C0E0;
+$brand-green-color: #9BD8E6;
+
+$medium-grey-color: #778594;
+$light-grey-color: #f8f9fa;
+
+$white-color: #ffffff;
