@@ -3,7 +3,7 @@
 {% block content %}
 {% set collection = page.collection() %}
 {% set dateformat = admin.page.dateformat ?: config.system.pages.dateformat.short ?: "F d, Y" %}
-{{dump(page.header)}}
+
 <section class="margin__bottom--large" id="blog" style="margin-top: 150px;">
 	<div class="container">
 		<div class="row margin__bottom--large">
@@ -22,7 +22,7 @@
 		{% for post in collection %}
 			<div class="col-md-6">
 				<div class="blog-home">
-					<div class="blog-home__image match-height" style="background-image: url('{{ page.header.header_image }}');">
+					<div class="blog-home__image match-height" style="background-image: url('{{ post.route }}/{{ post.header.media_order }}');">
 					</div>
 					<div class="blog-home__content match-height">
 						<p class="blog-home__date">{{ post.date|date(dateformat) }}</p>
@@ -36,6 +36,10 @@
 			</div>
 		{% endfor %}
 		</div>
+
+		{% if config.plugins.pagination.enabled and collection.params.pagination %}
+			{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+		{% endif %}
 	</div>
 </section>
 			

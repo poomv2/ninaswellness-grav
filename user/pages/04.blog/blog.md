@@ -2,7 +2,7 @@
 title: Blog
 content:
     items: '@self.children'
-    limit: 5
+    limit: 2
     order:
         by: date
         dir: desc

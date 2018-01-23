@@ -1,16 +1,16 @@
 <div class="blog-post-banner">
     <div class="container">
-    <div class="row">
-        <div class="col-md-3 offset-md-2">
-        <a href="/blog" class="btn btn-reverse btn-block margin__top--small">Back to blog</a>
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <a href="/blog" class="btn btn-reverse btn-block margin__top--small">Back to blog</a>
+            </div>
+            <div class="col-md-2 text-center">
+                <img src="{{ url('theme://images/blog-icon-white.svg') }}" alt="">
+            </div>
+            <div class="col-md-3">
+                <a href="/" class="btn btn-reverse btn-block margin__top--small">Homepage</a>
+            </div>
         </div>
-        <div class="col-md-2 text-center">
-        <img src="{{ url('theme://images/blog-icon-white.svg') }}" alt="">
-        </div>
-        <div class="col-md-3">
-        <a href="/" class="btn btn-reverse btn-block margin__top--small">Homepage</a>
-        </div>
-    </div>
     </div>
 </div>
 
@@ -27,7 +27,7 @@
 
             <h1>{{ page.title }}</h1>            
 
-            {% if header_image %}
+        {% if header_image %}
             {% if header_image_file %}
                 {% set header_image_media = page.media.images[header_image_file] %}
             {% else %}
@@ -40,3 +40,37 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 offset-md-3">
+            <a href="/blog" class="btn btn-primary btn-block margin__top--small">Back to blog</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/" class="btn btn-primary btn-block margin__top--small">Homepage</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+            <ul class="list-inline margin__top--large">
+            <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/facebook-icon.svg') }}" width="50" alt=""></a></li>
+            <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/instagram-link-icon.svg') }}" width="50" alt=""></a></li>
+            <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/twitter-icon.svg') }}" width="50" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% if show_prev_next %}
+
+        <p class="prev-next">
+            {% if not page.isFirst %}
+                <a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> {{ 'BLOG.ITEM.NEXT_POST'|t }}</a>
+            {% endif %}
+
+            {% if not page.isLast %}
+                <a class="button" href="{{ page.prevSibling.url }}">{{ 'BLOG.ITEM.PREV_POST'|t }} <i class="fa fa-chevron-right"></i></a>
+            {% endif %}
+        </p>
+    {% endif %}
+</div>
+
