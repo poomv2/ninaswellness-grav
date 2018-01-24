@@ -10,3 +10,6 @@ access:
     login: true
 hashed_password: $2y$10$F/htOM/rfyHLAp.p.BmdhOHOZGEKS5bCb5Vm0RNWcpO3cCPe.gGiu
 reset: 'b0fd5596abcf11b5370b52934b4ab545::1516917060'
+language: en
+login_attempts: {  }
+twofa_secret: XGOOLGLYJOETNULWGNOQZWVMTFPYGKSA

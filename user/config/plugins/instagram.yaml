@@ -3,7 +3,7 @@ route: /
 filters:
   category: null
 feed_parameters:
-  count: 7
+  count: 8
   cache_time: 1
   user_id: 2089a515f8ea4a54995b8b8f3e10ac3f
   access_token: 5708326643.2089a51.913a1128286d45b3b9faebdc001660a8

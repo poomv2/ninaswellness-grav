@@ -1,0 +1,15 @@
+enabled: true
+from: sonicpoom@gmail.com
+from_name: 'Grav Steve'
+to: sonicpoom@gmail.com
+to_name: 'Stephen Forbes'
+mailer:
+  engine: sendmail
+  smtp:
+    server: localhost
+    port: 25
+    encryption: none
+  sendmail:
+    bin: '/usr/sbin/sendmail -bs'
+content_type: text/html
+debug: false

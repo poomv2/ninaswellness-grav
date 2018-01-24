@@ -219,7 +219,7 @@ p {
   background-size: 15px;
   color: #ffffff; }
   .site-footer a {
-    color: white;
+    color: #fff;
     text-decoration: underline; }
 
 .site-nav {
@@ -313,6 +313,25 @@ p {
     color: #ffffff; }
   .mailing-list p {
     font-size: 18px; }
+
+.instagram ul {
+  padding: 0;
+  overflow: auto; }
+  .instagram ul li {
+    list-style: none;
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    max-height: 200px; }
+    @media (min-width: 767px) {
+      .instagram ul li {
+        max-height: 220px;
+        width: 25%; } }
+    @media (min-width: 992px) {
+      .instagram ul li {
+        max-height: 280px; } }
+    .instagram ul li img {
+      width: 100%; }
 
 .panel {
   margin-bottom: 1.5rem;

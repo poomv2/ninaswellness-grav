@@ -79,3 +79,29 @@
 
   p { font-size: 18px; }
 }
+
+.instagram ul {
+  padding: 0;
+  overflow: auto;
+
+  li {
+    list-style: none;
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    max-height: 200px;
+
+    @include breakpoint(small) {
+      max-height: 220px;
+      width: 25%;
+    }
+
+    @include breakpoint(medium) {
+      max-height:280px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
