@@ -2,7 +2,35 @@
 
 {% block content %}
 
-    {{ content }}
-    {% include "forms/form.html.twig" %}
+    
+<div class="contact-form-wrapper container">
+  <div class="row">
+    <div class="section-intro col-md-8 offset-md-2 text-center">
+      <img class="margin__bottom--medium" src="{{ url('theme://images/contact-icon.svg') }}" width="100" alt="">
+      <p class="body-text--intro">
+        {{ content }}
+      </p>
+    </div>
+  </div>
 
+  <div class="row contact-form">
+    <div class="col-md-10 offset-md-1">
+      {% include "forms/form.html.twig" %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a class="body-text--intro" href="mailto:nina.biodrowicz@hotmail.com">nina.biodrowicz@hotmail.com</a>
+        </li>
+        <li class="list-inline-item">
+          <a class="body-text--intro" href="tel:07929300438">07929 300 438</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+   
 {% endblock %}

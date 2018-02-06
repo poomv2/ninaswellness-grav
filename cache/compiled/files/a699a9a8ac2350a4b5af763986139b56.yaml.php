@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/system/blueprints/config/system.yaml',
-    'modified' => 1513122848,
+    'modified' => 1517511196,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SYSTEM',
         'form' => [

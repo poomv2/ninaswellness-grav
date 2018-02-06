@@ -66,7 +66,6 @@ form:
               title: Summary
               underline: true
 
-
             header.summary.enabled:
               type: toggle
               toggleable: true

@@ -41,13 +41,23 @@
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
   {% block header %}
+  <div class="mobile-nav">
+    <a class="mobile-menu-close-btn" href=""></a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About Nina</a></li>
+      <li><a href="/#classes">Classes</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
   <div class="top-bar" >
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-8 col-md-4 col-lg-3">
             <a class="logo" href="{{ base_url == '' ? '/' : base_url }}"><img src="{{ url('theme://images/logo.svg') }}" alt="Nina's Wellness Logo"></a>
           </div>
-          <div class="col-md-9">
+          <div class="col-4 col-md-8 col-lg-9">
             {% block header_extra %}{% endblock %}
             {% if config.plugins.langswitcher.enabled %}
             {% include 'partials/langswitcher.html.twig' %}
@@ -55,6 +65,7 @@
             {% block header_navigation %}
             {% include 'partials/navigation.html.twig' %}
             {% endblock %}
+            <a class="mobile-menu-btn" href="#"></a>
           </div>
         </div>
       </div>
@@ -82,12 +93,13 @@
               <h2>Join the mailing list</h2>
               <p>Like what I do? Subscribe to my mailing list by entering your email below and receive news and advice on pre &amp; post natal nutrition and fitness!</p>
               <div class="row">
-                <div class="col-md-8 offset-md-2">
-                  <form>
+                <div id="mc_embed_signup" class="col-md-8 offset-md-2">
+                  <form action="https://ninaswellness.us17.list-manage.com/subscribe/post?u=2f1f74b3f5d705e51b539a6e9&amp;id=33f9a594e0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                     <div class="form-group">
-                      <input type="email" class="form-control">
+                      <input type="email" value="" id="mce-EMAIL" name="EMAIL" class="form-control">
                     </div>
-                    <button class="btn btn-primary margin__top--small">Join mailing list</button>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2f1f74b3f5d705e51b539a6e9_33f9a594e0" tabindex="-1" value=""></div>
+                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary margin__top--small" value="Join mailing list">
                   </form>
                 </div>
               </div>
@@ -101,17 +113,17 @@
           <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
               <ul class="list-inline margin__top--large">
-                <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/facebook-icon.svg') }}" width="50" alt=""></a></li>
-                <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/instagram-link-icon.svg') }}" width="50" alt=""></a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/NinasWellness/" target="_blank"><img src="{{ url('theme://images/facebook-icon.svg') }}" width="50" alt=""></a></li>
+                <li class="list-inline-item"><a href="https://www.instagram.com/ninas_wellness/" target="_blank"><img src="{{ url('theme://images/instagram-link-icon.svg') }}" width="50" alt=""></a></li>
                 <li class="list-inline-item"><a href=""><img src="{{ url('theme://images/twitter-icon.svg') }}" width="50" alt=""></a></li>
               </ul>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 text-center">
               &copy; Copyright 2017 Nina's Wellness.
             </div>
-            <div class="col-md-6 text-right">
+            <div class="col-md-6 text-center text-md-right">
               Website design by <a href="http://www.kokolas.com">Ben Kokólas Design</a>
             </div>
           </div>
@@ -135,6 +147,21 @@
               });
             });
         });
+        </script>
+        <script>
+          $('.mobile-menu-btn').on('click', function(e) {
+            e.preventDefault();
+            $('.mobile-nav').addClass('active');
+          });
+
+          $('.mobile-menu-close-btn').on('click', function(e) {
+            e.preventDefault();
+            $('.mobile-nav').removeClass('active');
+          })
+
+          $('.mobile-nav a').on('click', function(){
+            $('.mobile-nav').removeClass('active');
+          });
         </script>
     {% endblock %}
 </body>

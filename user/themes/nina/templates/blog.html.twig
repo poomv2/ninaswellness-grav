@@ -4,11 +4,11 @@
 {% set collection = page.collection() %}
 {% set dateformat = admin.page.dateformat ?: config.system.pages.dateformat.short ?: "F d, Y" %}
 
-<section class="margin__bottom--large" id="blog" style="margin-top: 150px;">
+<section class="blog-page-wrapper margin__bottom--large">
 	<div class="container">
 		<div class="row margin__bottom--large">
 			<div class="col-md-2">
-				<img class="margin__bottom--medium" src="{{ url('theme://images/blog-icon.svg') }}" alt="">
+				<img class="blog-icon margin__bottom--medium" src="{{ url('theme://images/blog-icon.svg') }}" alt="">
 			</div>
 			<div class="col-md-9">
 				<h1>My Blog</h1>

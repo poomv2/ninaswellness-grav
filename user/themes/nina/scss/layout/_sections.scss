@@ -27,7 +27,7 @@
 
 .testimonial {
   background-image: url('../images/diagonal-pattern.png'), linear-gradient(45deg, $brand-lilac-color 20%, #99d9e7 100%);
-  background-size: 9px;
+  background-size: 9px, 100%;
   color: #fff;
   padding-top: 50px;
   padding-bottom: 45px;
@@ -103,5 +103,38 @@
     img {
       width: 100%;
     }
+  }
+}
+
+.questionnaire-wrapper {
+  
+  h3 {
+    margin-top: 50px;
+    color: $brand-green-color;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }
+
+  input[type="date"] {
+    font-size: 1rem;
+  }
+}
+
+.contact-form-wrapper {
+  margin-top: 50px;
+
+  @include breakpoint(small) {
+    margin-top: 150px;
   }
 }

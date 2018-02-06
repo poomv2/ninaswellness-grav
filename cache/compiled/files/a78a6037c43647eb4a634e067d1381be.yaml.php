@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/themes/nina/languages.yaml',
-    'modified' => 1513123390,
+    'modified' => 1517511501,
     'data' => [
         'en' => [
             'TRANSLATION_TEST' => 'Antimatter!',

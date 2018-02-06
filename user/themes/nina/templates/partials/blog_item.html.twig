@@ -1,13 +1,13 @@
 <div class="blog-post-banner">
     <div class="container">
         <div class="row">
+            <div class="col-md-2 order-md-1 text-center">
+                <img src="{{ url('theme://images/blog-icon-white.svg') }}" alt="">
+            </div>
             <div class="col-md-3 offset-md-2">
                 <a href="/blog" class="btn btn-reverse btn-block margin__top--small">Back to blog</a>
             </div>
-            <div class="col-md-2 text-center">
-                <img src="{{ url('theme://images/blog-icon-white.svg') }}" alt="">
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-3 order-md-12">
                 <a href="/" class="btn btn-reverse btn-block margin__top--small">Homepage</a>
             </div>
         </div>
@@ -20,10 +20,7 @@
 <div class="blog-content-wrapper container margin__top--large margin__bottom--large text-center">
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <time class="dt-published" datetime="{{ page.date|date("c") }}">
-                <span>{{ page.date|date("d") }}</span>
-                <em>{{ page.date|date("M") }}</em>
-            </time>
+            <p class="blog-post__date">{{ post.date|date(dateformat) }}</p>
 
             <h1>{{ page.title }}</h1>            
 
@@ -43,10 +40,10 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3 offset-md-3">
+        <div class="col-md-6 col-lg-3 offset-lg-3">
             <a href="/blog" class="btn btn-primary btn-block margin__top--small">Back to blog</a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6 col-lg-3">
             <a href="/" class="btn btn-primary btn-block margin__top--small">Homepage</a>
         </div>
     </div>
@@ -60,8 +57,10 @@
         </div>
     </div>
 
-    {% if show_prev_next %}
+    <h2 class="text-center margin__bottom--large margin__top--large">More from my blog</h2>
+    {% include 'partials/recent-posts.html.twig' %}
 
+    {% if show_prev_next %}
         <p class="prev-next">
             {% if not page.isFirst %}
                 <a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> {{ 'BLOG.ITEM.NEXT_POST'|t }}</a>

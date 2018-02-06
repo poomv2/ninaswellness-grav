@@ -20,6 +20,10 @@
     background-color: $white-color;
     border-radius: 30px;
     color: $brand-lilac-color;
+
+    &:hover {
+      color: $brand-green-color;
+    }
   }
 
   &-default {

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/system/config/site.yaml',
-    'modified' => 1513122848,
+    'modified' => 1517511198,
     'data' => [
         'title' => 'Grav',
         'default_lang' => 'en',

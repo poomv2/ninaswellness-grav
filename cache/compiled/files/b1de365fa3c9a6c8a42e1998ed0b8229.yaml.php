@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/plugins/admin/languages/sl.yaml',
-    'modified' => 1513122885,
+    'modified' => 1517511208,
     'data' => [
         'PLUGIN_ADMIN' => [
             'LOGIN_BTN' => 'Prijava',

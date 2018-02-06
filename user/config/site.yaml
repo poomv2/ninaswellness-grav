@@ -11,7 +11,7 @@ metadata:
 summary:
   enabled: true
   format: short
-  size: 300
+  size: 150
   delimiter: '==='
 blog:
   route: /blog

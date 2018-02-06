@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/system/languages/hr.yaml',
-    'modified' => 1513122848,
+    'modified' => 1517511223,
     'data' => [
         'INFLECTOR_UNCOUNTABLE' => [
             0 => 'oprema',

@@ -1,55 +1,71 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1516656481,
-    'checksum' => 'ad10b1db0ce06b4813bb6220fd704968',
+    'timestamp' => 1517516153,
+    'checksum' => 'bc8d92550a0eacfab3dedba938f85c80',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
                 'file' => 'system/blueprints/config/media.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511196
             ],
             'site' => [
                 'file' => 'system/blueprints/config/site.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511196
             ],
             'streams' => [
                 'file' => 'system/blueprints/config/streams.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511196
             ],
             'system' => [
                 'file' => 'system/blueprints/config/system.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511196
             ]
         ],
         'user/plugins' => [
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/blueprints.yaml',
-                'modified' => 1509090990
+                'modified' => 1517511453
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/blueprints.yaml',
+                'modified' => 1517511454
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/blueprints.yaml',
-                'modified' => 1516656480
+                'modified' => 1517511373
+            ],
+            'plugins/recent-posts' => [
+                'file' => 'user/plugins/recent-posts/blueprints.yaml',
+                'modified' => 1517511458
             ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/blueprints.yaml',
-                'modified' => 1513122885
+                'modified' => 1517511200
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
-                'modified' => 1509090990
+                'modified' => 1517511457
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
-                'modified' => 1509090990
+                'modified' => 1517511370
+            ],
+            'plugins/instagram' => [
+                'file' => 'user/plugins/instagram/blueprints.yaml',
+                'modified' => 1517511385
+            ],
+            'plugins/data-manager' => [
+                'file' => 'user/plugins/data-manager/blueprints.yaml',
+                'modified' => 1517511337
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/blueprints.yaml',
-                'modified' => 1513122872
+                'modified' => 1517511436
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/blueprints.yaml',
-                'modified' => 1513122876
+                'modified' => 1517511338
             ]
         ]
     ],
@@ -1808,6 +1824,55 @@ return [
                 'name' => 'plugins.markdown-notices.level_classes',
                 'validation' => 'strict'
             ],
+            'plugins.pagination' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.pagination.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.pagination.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.pagination.delta' => [
+                'type' => 'number',
+                'size' => 'x-small',
+                'label' => 'Delta',
+                'default' => 0,
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 0
+                ],
+                'name' => 'plugins.pagination.delta',
+                'validation' => 'strict'
+            ],
+            'plugins.pagination.built_in_css' => [
+                'type' => 'toggle',
+                'label' => 'Use built in CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.pagination.built_in_css',
+                'validation' => 'strict'
+            ],
             'plugins.form' => [
                 'type' => '_root',
                 'form_field' => false,
@@ -1978,6 +2043,139 @@ return [
                 'label' => 'PLUGIN_FORM.RECAPTCHA_SECRET_KEY',
                 'default' => '',
                 'name' => 'plugins.form.recaptcha.secret_key',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'strict'
+                ]
+            ],
+            'plugins.recent-posts.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.recent-posts.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.built_in_css' => [
+                'type' => 'toggle',
+                'label' => 'Use built in CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.recent-posts.built_in_css',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.date_display_format' => [
+                'type' => 'select',
+                'size' => 'medium',
+                'classes' => 'fancy',
+                'label' => 'Date Format',
+                'default' => 'jS M Y',
+                'options' => [
+                    'F jS Y' => 'January 1st 2014',
+                    'l jS of F' => 'Monday 1st of January',
+                    'D, m M Y' => 'Mon, 01 Jan 2014',
+                    'd-m-y' => '01-01-14',
+                    'jS M Y' => '10th Feb 2014'
+                ],
+                'name' => 'plugins.recent-posts.date_display_format',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.limit' => [
+                'type' => 'text',
+                'size' => 'x-small',
+                'label' => 'Count Limit',
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 1
+                ],
+                'name' => 'plugins.recent-posts.limit',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.order' => [
+                'type' => '_parent',
+                'name' => 'plugins.recent-posts.order',
+                'form_field' => false
+            ],
+            'plugins.recent-posts.order.dir' => [
+                'type' => 'toggle',
+                'label' => 'Order Direction',
+                'highlight' => 'asc',
+                'default' => 'desc',
+                'options' => [
+                    'asc' => 'Ascending',
+                    'desc' => 'Descending'
+                ],
+                'name' => 'plugins.recent-posts.order.dir',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.order.by' => [
+                'type' => 'select',
+                'size' => 'medium',
+                'classes' => 'fancy',
+                'label' => 'Order Type',
+                'default' => 'date',
+                'options' => [
+                    'default' => 'Default - based on folder name',
+                    'folder' => 'Folder - based on prefix-less folder name',
+                    'title' => 'Title - based on title field in header',
+                    'date' => 'Date - based on date field in header'
+                ],
+                'name' => 'plugins.recent-posts.order.by',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.filters' => [
+                'type' => '_parent',
+                'name' => 'plugins.recent-posts.filters',
+                'form_field' => false
+            ],
+            'plugins.recent-posts.filters.category' => [
+                'type' => 'selectize',
+                'label' => 'Category filter',
+                'validate' => [
+                    'type' => 'commalist'
+                ],
+                'name' => 'plugins.recent-posts.filters.category',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.filters.page' => [
+                'type' => 'pages',
+                'label' => 'Page filter',
+                'multiple' => true,
+                'validate' => [
+                    'type' => 'commalist'
+                ],
+                'name' => 'plugins.recent-posts.filters.page',
+                'validation' => 'strict'
+            ],
+            'plugins.recent-posts.filter_combinator' => [
+                'type' => 'select',
+                'size' => 'medium',
+                'classes' => 'fancy',
+                'label' => 'Filter Combinator',
+                'default' => 'and',
+                'options' => [
+                    'and' => 'And - Boolean &&',
+                    'or' => 'Or - Boolean ||'
+                ],
+                'name' => 'plugins.recent-posts.filter_combinator',
                 'validation' => 'strict'
             ],
             'plugins.admin' => [
@@ -2581,6 +2779,104 @@ return [
                 'default' => '/error',
                 'name' => 'plugins.error.routes.404',
                 'validation' => 'strict'
+            ],
+            'plugins.instagram' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
+            ],
+            'plugins.instagram.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.instagram.enabled',
+                'validation' => 'loose'
+            ],
+            'plugins.instagram.feed_parameters' => [
+                'type' => 'section',
+                'underline' => true,
+                'name' => 'plugins.instagram.feed_parameters',
+                'validation' => 'loose'
+            ],
+            'plugins.instagram.feed_parameters.count' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Amount of feed items to show',
+                'default' => 7,
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 1,
+                    'max' => 20
+                ],
+                'name' => 'plugins.instagram.feed_parameters.count',
+                'validation' => 'loose'
+            ],
+            'plugins.instagram.feed_parameters.cache_time' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Hours to cache the feed',
+                'default' => 1,
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 1,
+                    'max' => 65535
+                ],
+                'name' => 'plugins.instagram.feed_parameters.cache_time',
+                'validation' => 'loose'
+            ],
+            'plugins.instagram.feed_parameters.user_id' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'User id',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.instagram.feed_parameters.user_id',
+                'validation' => 'loose'
+            ],
+            'plugins.instagram.feed_parameters.access_token' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Access token',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.instagram.feed_parameters.access_token',
+                'validation' => 'loose'
+            ],
+            'plugins.data-manager' => [
+                'type' => '_root',
+                'form_field' => false,
+                'form' => [
+                    'validation' => 'loose'
+                ]
+            ],
+            'plugins.data-manager.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.data-manager.enabled',
+                'validation' => 'loose'
             ],
             'plugins.login' => [
                 'type' => '_root',
@@ -3421,6 +3717,11 @@ return [
                     'built_in_css' => 'plugins.markdown-notices.built_in_css',
                     'level_classes' => 'plugins.markdown-notices.level_classes'
                 ],
+                'pagination' => [
+                    'enabled' => 'plugins.pagination.enabled',
+                    'delta' => 'plugins.pagination.delta',
+                    'built_in_css' => 'plugins.pagination.built_in_css'
+                ],
                 'form' => [
                     'enabled' => 'plugins.form.enabled',
                     'general' => 'plugins.form.general',
@@ -3439,6 +3740,21 @@ return [
                         'site_key' => 'plugins.form.recaptcha.site_key',
                         'secret_key' => 'plugins.form.recaptcha.secret_key'
                     ]
+                ],
+                'recent-posts' => [
+                    'enabled' => 'plugins.recent-posts.enabled',
+                    'built_in_css' => 'plugins.recent-posts.built_in_css',
+                    'date_display_format' => 'plugins.recent-posts.date_display_format',
+                    'limit' => 'plugins.recent-posts.limit',
+                    'order' => [
+                        'dir' => 'plugins.recent-posts.order.dir',
+                        'by' => 'plugins.recent-posts.order.by'
+                    ],
+                    'filters' => [
+                        'category' => 'plugins.recent-posts.filters.category',
+                        'page' => 'plugins.recent-posts.filters.page'
+                    ],
+                    'filter_combinator' => 'plugins.recent-posts.filter_combinator'
                 ],
                 'admin' => [
                     'Basics' => 'plugins.admin.Basics',
@@ -3511,6 +3827,18 @@ return [
                     'routes' => [
                         404 => 'plugins.error.routes.404'
                     ]
+                ],
+                'instagram' => [
+                    'enabled' => 'plugins.instagram.enabled',
+                    'feed_parameters' => [
+                        'count' => 'plugins.instagram.feed_parameters.count',
+                        'cache_time' => 'plugins.instagram.feed_parameters.cache_time',
+                        'user_id' => 'plugins.instagram.feed_parameters.user_id',
+                        'access_token' => 'plugins.instagram.feed_parameters.access_token'
+                    ]
+                ],
+                'data-manager' => [
+                    'enabled' => 'plugins.data-manager.enabled'
                 ],
                 'login' => [
                     'tabs' => 'plugins.login.tabs',

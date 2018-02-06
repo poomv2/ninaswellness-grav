@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/system/languages/de.yaml',
-    'modified' => 1513122848,
+    'modified' => 1517511223,
     'data' => [
         'FRONTMATTER_ERROR_PAGE' => '---
 title: %1$s

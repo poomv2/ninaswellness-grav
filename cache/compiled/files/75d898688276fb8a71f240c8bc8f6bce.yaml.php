@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/themes/nina/blueprints/item.yaml',
-    'modified' => 1513123390,
+    'modified' => 1517314014,
     'data' => [
         'title' => 'Item',
         '@extends' => [

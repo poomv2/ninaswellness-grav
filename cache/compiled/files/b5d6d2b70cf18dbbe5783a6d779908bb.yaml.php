@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/system/languages/cs.yaml',
-    'modified' => 1513122848,
+    'modified' => 1517511222,
     'data' => [
         'INFLECTOR_UNCOUNTABLE' => [
             0 => 'vybavení',

@@ -1,0 +1,330 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+<div class="page-header">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-2 offset-md-5 text-center">
+          <img src="/images/blog-icon-white.svg" alt="">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <h1>Pre Natal Pre-Activity Health Questionnaire (PARQ)</h1>
+          <p>Please complete the below PARQ before commencing any physical training at Nina's Wellness. Please also confirm
+            that you have been given permission to commence excercising by your HCP at your 6-8 week check up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form action="">
+    <div class="container questionnaire-wrapper text-center">
+      <h3>Section 1</h3>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="First name *" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Surname *" required>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Address" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="tel" class="form-control" placeholder="Phone No" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" required>
+          </div>
+        </div>
+      </div>
+
+      <h3>Section 2</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <input type="date" class="form-control" placeholder="Date of Delivery">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <select name="deliver_type" class="form-control">
+              <option value="">Type of Delivery</option>
+              <option value="Assisted">Assisted</option>
+              <option value="Vaginal">Vaginal</option>
+              <option value="C-Section">C-Section</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <select name="breastfeeding_status" class="form-control">
+              <option value="">Breastfeeding Status</option>
+              <option value="Exclusive Breast Feeding">Exclusive Breast Feeding</option>
+              <option value="Exclusive Formula">Exclusive Formula</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="6-8 Week Check Up &amp; Outcome">
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <select name="bleeding_status" class="form-control">
+              <option value="">Post Natal Bleeding Status</option>
+              <option value="Concluded">Concluded</option>
+              <option value="Sporadic">Sporadic</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <select name="fitted_IUD" class="form-control">
+              <option value="">Recently Fitted UID?</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <input type="date" class="form-control" placeholder="Program Start Date">
+          </div>
+        </div>
+      </div>
+
+      <h3>Section 3</h3>
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <p>Please give details of your Pregnancy &amp; Post Natal, include any complications, illnesses, reasons to visit
+            your Doctor or any other Health Practitioner including Massage, Acupuncture, Pilates, Physiotherapy, Osteopathy,
+            Chiropractor etc.</p>
+        </div>
+        <div class="col-md-12">
+          <textarea name="details" id="details" cols="25" rows="10" class="form-control"></textarea>
+        </div>
+      </div>
+
+      <h3>Section 4</h3>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <p>
+            Do you currently or have you ever suffered any of the following conditions?
+            <br> Click on the relevant tiles.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        
+        <!-- Checkbox Row 1 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="symphysis_pubis_dysfunction">
+            <label for="symphysis_pubis_dysfunction" class="form-check-label">
+              Symphysis Pubis Dysfunction
+              <br> (pain in the central pubic area)
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="sacrum_sacroillac_joint_pain">
+            <label for="sacrum_sacroillac_joint_pain" class="form-check-label">
+              Sacrum or Sacroillac Joint Pain
+              <br> (pain in the very low mid back - top of buttocks)
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="bleeding_exercise">
+            <label for="bleeding_exercise" class="form-check-label">
+              Bleeding during or after exercise or any unexplained bleeding
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkbox Row 2 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="carpul_tunnel_syndrome">
+            <label for="carpul_tunnel_syndrome" class="form-check-label">
+              Carpul Tunnel Syndrome
+              <br> (Wrist/finger/hand forearm-pain/numbness or tingling)
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="knee_pain">
+            <label for="knee_pain" class="form-check-label">
+              Knee Pain (Side/front)
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="blood_pressure">
+            <label for="blood_pressure" class="form-check-label">
+              High/low blood pressure episodes of faintness, dizziness or breathlessness, history of Thrombosis or blood clots
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkbox Row 3 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="upper_back_pain">
+            <label for="upper_back_pain" class="form-check-label">
+              Upper Back/Neck/Shoulder Pain
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="coccyx_pain">
+            <label for="coccyx_pain" class="form-check-label">
+              Coccyx Damage or Pain
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="diastasis">
+            <label for="diastasis" class="form-check-label">
+              Diastasis (Seperation of your abdominal muscles)
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkbox Row 4 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="bladder_bowel_control">
+            <label for="bladder_bowel_control" class="form-check-label">
+              Lack of total Bladder/Bowel Control (Urinary or Feacal Incontinence)
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="prolapse">
+            <label for="prolapse" class="form-check-label">
+              Prolapse (Uterine, Bladder, Rectum, Vaginal)
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="breast_health">
+            <label for="breast_health" class="form-check-label">
+              Breast Health/Breast Feeding Issues
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkbox Row 5 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="piles_constipation">
+            <label for="piles_constipation" class="form-check-label">
+              Piles/Haemorrhoids/Varicose Veins/Constipation
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="epidural">
+            <label for="epidural" class="form-check-label">
+              Were you given an Epidural during birthing?
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="nerve_damage">
+            <label for="nerve_damage" class="form-check-label">
+              Nerve Damage During Birthing
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkbox Row 6 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="gestational_diabetes">
+            <label for="gestational_diabetes" class="form-check-label">
+              After Effects of Gestational Diabetes
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="c_section_wound">
+            <label for="c_section_wound" class="form-check-label">
+              C-Section wound discomfort or slow healing or ongoing numbness
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="anaemia">
+            <label for="anaemia" class="form-check-label">
+              Anaemia or taking Iron medication
+            </label>
+          </div>
+        </div>
+
+
+        <!-- Checkbox Row 7 -->
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="joint_pain">
+            <label for="joint_pain" class="form-check-label">
+              Joint Pain
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="sciatica">
+            <label for="sciatica" class="form-check-label">
+              Buttock/Piriformis/Sciatica
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="anaemia">
+            <label for="anaemia" class="form-check-label">
+              Episiotomy Cut, Painful Perineum or Tears (Degree if known)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <input class="btn btn-primary margin__top--large" type="submit" value="Submit Form">
+    </div>
+  </form>
+
+{% endblock %}

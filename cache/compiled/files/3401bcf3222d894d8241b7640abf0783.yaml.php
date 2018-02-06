@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/plugins/admin/languages/ar.yaml',
-    'modified' => 1513122885,
+    'modified' => 1517511203,
     'data' => [
         'PLUGIN_ADMIN' => [
             'ADMIN_BETA_MSG' => 'هذا إصدار بيتا! استخدم هذا في الإنتاج على مسؤوليتك الخاصة...',

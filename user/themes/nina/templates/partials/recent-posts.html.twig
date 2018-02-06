@@ -1,10 +1,18 @@
-<ul>
-    {% for post in recent_posts %}
-        <li class="sidebar-post">
-            <a title="post.title" href="{{ post.url }}">
-                <span>{{ post.date|date("F Y") }}</span><br>
-                {{ post.title }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+<div class="row">
+{% for post in recent_posts %}
+  <div class="col-md-6">
+    <div class="blog-home">
+      <div class="blog-home__image match-height" style="background-image: url('{{ url('theme://images/blog/blog-image-1.jpg') }}');"></div>
+      <div class="blog-home__content match-height">
+        <p class="blog-home__date">{{ post.date|date(dateformat) }}</p>
+        {{ debug(post) }}
+        <div class="blog-home__content-inner">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.summary }}</p>
+          <a href="{{ post.url }}" class="btn btn-default">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>

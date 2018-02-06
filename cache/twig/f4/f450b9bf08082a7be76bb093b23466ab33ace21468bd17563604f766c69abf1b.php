@@ -65,7 +65,9 @@ class __TwigTemplate_566c67c9d2ef46573d4d4ad6f9153c73b06883c1f2d7da1b93ce024056a
 \t\t\t\t<div class=\"blog-home\">
 \t\t\t\t\t<div class=\"blog-home__image match-height\" style=\"background-image: url('";
             // line 25
-            echo $this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", array()), "header_image", array());
+            echo $this->getAttribute($context["post"], "route", array());
+            echo "/";
+            echo $this->getAttribute($this->getAttribute($context["post"], "header", array()), "media_order", array());
             echo "');\">
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"blog-home__content match-height\">
@@ -99,7 +101,18 @@ class __TwigTemplate_566c67c9d2ef46573d4d4ad6f9153c73b06883c1f2d7da1b93ce024056a
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 38
         echo "\t\t</div>
-\t</div>
+
+\t\t";
+        // line 40
+        if (($this->getAttribute($this->getAttribute($this->getAttribute(($context["config"] ?? null), "plugins", array()), "pagination", array()), "enabled", array()) && $this->getAttribute($this->getAttribute(($context["collection"] ?? null), "params", array()), "pagination", array()))) {
+            // line 41
+            echo "\t\t\t";
+            $this->loadTemplate("partials/pagination.html.twig", "blog.html.twig", 41)->display(array_merge($context, array("base_url" => $this->getAttribute(($context["page"] ?? null), "url", array()), "pagination" => $this->getAttribute($this->getAttribute(($context["collection"] ?? null), "params", array()), "pagination", array()))));
+            // line 42
+            echo "\t\t";
+        }
+        // line 43
+        echo "\t</div>
 </section>
 \t\t\t
 ";
@@ -117,7 +130,7 @@ class __TwigTemplate_566c67c9d2ef46573d4d4ad6f9153c73b06883c1f2d7da1b93ce024056a
 
     public function getDebugInfo()
     {
-        return array (  101 => 38,  89 => 32,  85 => 31,  79 => 30,  74 => 28,  68 => 25,  64 => 23,  60 => 22,  51 => 16,  43 => 11,  35 => 6,  33 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  115 => 43,  112 => 42,  109 => 41,  107 => 40,  103 => 38,  91 => 32,  87 => 31,  81 => 30,  76 => 28,  68 => 25,  64 => 23,  60 => 22,  51 => 16,  43 => 11,  35 => 6,  33 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -154,7 +167,7 @@ class __TwigTemplate_566c67c9d2ef46573d4d4ad6f9153c73b06883c1f2d7da1b93ce024056a
 \t\t{% for post in collection %}
 \t\t\t<div class=\"col-md-6\">
 \t\t\t\t<div class=\"blog-home\">
-\t\t\t\t\t<div class=\"blog-home__image match-height\" style=\"background-image: url('{{ page.header.header_image }}');\">
+\t\t\t\t\t<div class=\"blog-home__image match-height\" style=\"background-image: url('{{ post.route }}/{{ post.header.media_order }}');\">
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"blog-home__content match-height\">
 \t\t\t\t\t\t<p class=\"blog-home__date\">{{ post.date|date(dateformat) }}</p>
@@ -168,6 +181,10 @@ class __TwigTemplate_566c67c9d2ef46573d4d4ad6f9153c73b06883c1f2d7da1b93ce024056a
 \t\t\t</div>
 \t\t{% endfor %}
 \t\t</div>
+
+\t\t{% if config.plugins.pagination.enabled and collection.params.pagination %}
+\t\t\t{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+\t\t{% endif %}
 \t</div>
 </section>
 \t\t\t

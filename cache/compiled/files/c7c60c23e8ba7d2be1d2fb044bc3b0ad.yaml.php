@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/plugins/email/email.yaml',
-    'modified' => 1513122876,
+    'modified' => 1517511340,
     'data' => [
         'enabled' => true,
         'from' => NULL,

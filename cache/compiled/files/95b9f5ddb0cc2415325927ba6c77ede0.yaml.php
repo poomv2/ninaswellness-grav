@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/plugins/login/languages/hu.yaml',
-    'modified' => 1513122872,
+    'modified' => 1517511440,
     'data' => [
         'PLUGIN_LOGIN' => [
             'ACCESS_DENIED' => 'Hozzáférés megtagadva...',

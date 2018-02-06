@@ -1,77 +1,105 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1516663155,
-    'checksum' => '3b519c391baa8416d035f9e608f332b4',
+    'timestamp' => 1517516606,
+    'checksum' => 'f6042d3402f721f4d272b64a2048c01d',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
-                'modified' => 1513122771
+                'modified' => 1517511194
+            ],
+            'plugins/email' => [
+                'file' => 'user/config/plugins/email.yaml',
+                'modified' => 1517511195
+            ],
+            'plugins/instagram' => [
+                'file' => 'user/config/plugins/instagram.yaml',
+                'modified' => 1517511195
+            ],
+            'plugins/recent-posts' => [
+                'file' => 'user/config/plugins/recent-posts.yaml',
+                'modified' => 1517511195
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
-                'modified' => 1513122771
+                'modified' => 1517511195
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1516317558
+                'modified' => 1517511195
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
-                'modified' => 1513122771
+                'modified' => 1517511195
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1516663111
+                'modified' => 1517516558
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511198
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511198
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511198
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1513122848
+                'modified' => 1517511198
             ]
         ],
         'user/plugins' => [
             'plugins/markdown-notices' => [
                 'file' => 'user/plugins/markdown-notices/markdown-notices.yaml',
-                'modified' => 1509090990
+                'modified' => 1517511454
+            ],
+            'plugins/pagination' => [
+                'file' => 'user/plugins/pagination/pagination.yaml',
+                'modified' => 1517511456
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1516656480
+                'modified' => 1517511374
+            ],
+            'plugins/recent-posts' => [
+                'file' => 'user/plugins/recent-posts/recent-posts.yaml',
+                'modified' => 1517511459
             ],
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
-                'modified' => 1513122885
+                'modified' => 1517511199
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1509090990
+                'modified' => 1517511458
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1509090990
+                'modified' => 1517511371
+            ],
+            'plugins/instagram' => [
+                'file' => 'user/plugins/instagram/instagram.yaml',
+                'modified' => 1517511386
+            ],
+            'plugins/data-manager' => [
+                'file' => 'user/plugins/data-manager/data-manager.yaml',
+                'modified' => 1517511338
             ],
             'plugins/login' => [
                 'file' => 'user/plugins/login/login.yaml',
-                'modified' => 1513122872
+                'modified' => 1517511440
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1513122876
+                'modified' => 1517511340
             ]
         ]
     ],
@@ -87,6 +115,11 @@ return [
                     3 => 'green'
                 ]
             ],
+            'pagination' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'delta' => 0
+            ],
             'form' => [
                 'enabled' => true,
                 'built_in_css' => true,
@@ -100,6 +133,23 @@ return [
                     'filesize' => 0,
                     'accept' => [
                         0 => 'image/*'
+                    ]
+                ]
+            ],
+            'recent-posts' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'date_display_format' => 'F Y',
+                'limit' => 12,
+                'order' => [
+                    'by' => 'date',
+                    'dir' => 'desc'
+                ],
+                'filter_combinator' => 'and',
+                'filters' => [
+                    'category' => NULL,
+                    'page' => [
+                        0 => '/blog'
                     ]
                 ]
             ],
@@ -171,6 +221,22 @@ return [
                     404 => '/error'
                 ]
             ],
+            'instagram' => [
+                'enabled' => true,
+                'route' => '/',
+                'filters' => [
+                    'category' => NULL
+                ],
+                'feed_parameters' => [
+                    'count' => 8,
+                    'cache_time' => 1,
+                    'user_id' => '2089a515f8ea4a54995b8b8f3e10ac3f',
+                    'access_token' => '5708326643.2089a51.913a1128286d45b3b9faebdc001660a8'
+                ]
+            ],
+            'data-manager' => [
+                'enabled' => true
+            ],
             'login' => [
                 'enabled' => true,
                 'built_in_css' => true,
@@ -226,10 +292,10 @@ return [
             ],
             'email' => [
                 'enabled' => true,
-                'from' => NULL,
-                'from_name' => NULL,
-                'to' => NULL,
-                'to_name' => NULL,
+                'from' => 'sonicpoom@gmail.com',
+                'from_name' => 'Grav Steve',
+                'to' => 'sonicpoom@gmail.com',
+                'to_name' => 'Stephen Forbes',
                 'mailer' => [
                     'engine' => 'sendmail',
                     'smtp' => [
@@ -530,7 +596,7 @@ return [
             'summary' => [
                 'enabled' => true,
                 'format' => 'short',
-                'size' => 300,
+                'size' => 150,
                 'delimiter' => '==='
             ],
             'redirects' => NULL,
@@ -564,7 +630,7 @@ return [
         ],
         'system' => [
             'absolute_urls' => false,
-            'timezone' => '',
+            'timezone' => 'Europe/London',
             'default_locale' => NULL,
             'param_sep' => ':',
             'wrapped_site' => false,
@@ -641,7 +707,7 @@ return [
                 'etag' => false,
                 'vary_accept_encoding' => false,
                 'redirect_default_route' => false,
-                'redirect_default_code' => 302,
+                'redirect_default_code' => '302',
                 'redirect_trailing_slash' => true,
                 'ignore_files' => [
                     0 => '.DS_Store'
@@ -702,11 +768,11 @@ return [
                 ]
             ],
             'errors' => [
-                'display' => true,
+                'display' => '1',
                 'log' => true
             ],
             'debugger' => [
-                'enabled' => false,
+                'enabled' => true,
                 'shutdown' => [
                     'close_connection' => true
                 ],
@@ -727,7 +793,8 @@ return [
                 'allowed_fallback_types' => [
                     
                 ],
-                'auto_metadata_exif' => false
+                'auto_metadata_exif' => false,
+                'upload_limit' => 33554432
             ],
             'session' => [
                 'enabled' => true,

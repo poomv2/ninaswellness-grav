@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/plugins/error/blueprints.yaml',
-    'modified' => 1509090990,
+    'modified' => 1517511370,
     'data' => [
         'name' => 'Error',
         'version' => '1.6.0',

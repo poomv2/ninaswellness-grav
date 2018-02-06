@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/config/site.yaml',
-    'modified' => 1516317558,
+    'modified' => 1517511195,
     'data' => [
         'title' => 'Nina\'s Wellness',
         'default_lang' => 'en',
@@ -20,7 +20,7 @@ return [
         'summary' => [
             'enabled' => true,
             'format' => 'short',
-            'size' => 300,
+            'size' => 150,
             'delimiter' => '==='
         ],
         'blog' => [

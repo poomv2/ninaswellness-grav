@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/steveforbes/Sites/ninas-wellness/grav-admin/user/plugins/form/languages.yaml',
-    'modified' => 1516656480,
+    'modified' => 1517511374,
     'data' => [
         'en' => [
             'PLUGIN_FORM' => [

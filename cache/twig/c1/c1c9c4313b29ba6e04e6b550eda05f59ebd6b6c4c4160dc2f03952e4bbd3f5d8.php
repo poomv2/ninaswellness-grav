@@ -64,7 +64,7 @@ class __TwigTemplate_c8cf4228ef5edb0aab3388a58e9e49fe0ea0c0044abbf1c7da4109c2ca9
         echo $this->getAttribute(($context["page"] ?? null), "title", array());
         echo "</h1>            
 
-            ";
+        ";
         // line 30
         if (($context["header_image"] ?? null)) {
             // line 31
@@ -154,7 +154,7 @@ class __TwigTemplate_c8cf4228ef5edb0aab3388a58e9e49fe0ea0c0044abbf1c7da4109c2ca9
 
             <h1>{{ page.title }}</h1>            
 
-            {% if header_image %}
+        {% if header_image %}
             {% if header_image_file %}
                 {% set header_image_media = page.media.images[header_image_file] %}
             {% else %}
